@@ -21,5 +21,8 @@ app.use("/product",productRouter);
 app.use("/order",orderRouter);
 app.use("/vender",venderRouter);
 app.use("/cart",cartRouter)
+app.use("/",(req,res)=>{
+    res.send("hello")
+})
 
 export default app;
