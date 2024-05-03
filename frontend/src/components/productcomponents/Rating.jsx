@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StarRating from "react-rating-stars-component";
+import StarRatings from "react-star-ratings";
 import { useDispatch } from "react-redux";
 import { addreview } from "../../slices/productSlice";
 import { useParams } from "react-router-dom";
@@ -83,12 +83,18 @@ const filearray=Array.from(event.target.files)
           <label className="text-white" htmlFor="rating">
             Select Rating
           </label>
-          <StarRating
-            count={5} // Total number of stars
-            value={3} // Initial rating
-            onChange={handleRatingChange} // Callback for rating change
-            size={24} // Size of the stars
-            color="#00b300"
+          <StarRatings
+            // count={5} // Total number of stars
+            // value={3} // Initial rating
+            // onChange={handleRatingChange} // Callback for rating change
+            // size={24} // Size of the stars
+            // color="#00b300"
+            rating={formdata.rating} // Current rating
+            starRatedColor="#00b300"
+            changeRating={handleRatingChange} // Callback for rating change
+            numberOfStars={5} // Total number of stars
+            starDimension="24px" // Size of the stars
+            starSpacing="2px" // Space between the star
           />
         </div>
         <button
